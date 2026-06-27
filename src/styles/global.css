@@ -153,6 +153,9 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
 /* MathJax display blocks: allow horizontal scroll on mobile */
 .prose mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 0.4em 0; }
 .math-display { margin: 1.4em 0; }
+/* Deepen math color so CHTML strokes read solid against cream, not thin. */
+mjx-container { color: #1c1813; }
+:root.dark mjx-container { color: var(--fg); }
 
 /* ============================================================
    Callouts (Obsidian-style)
