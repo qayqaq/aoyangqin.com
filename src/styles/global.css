@@ -11,8 +11,8 @@
     "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --font-mono: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
 
-  --fs-base: 1.05rem;
-  --fs-sm: 0.875rem;
+  --fs-base: 1.0rem;
+  --fs-sm: 0.85rem;
   --lh-base: 1.72;
 
   /* light — warm cream paper + ink */
@@ -366,7 +366,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
    Mobile
    ============================================================ */
 @media (max-width: 640px) {
-  :root { --fs-base: 1.0rem; }
+  :root { --fs-base: 0.95rem; }
   .content { padding: 1.6rem 1.2rem 3rem; }
   .prose h1 { font-size: 1.6rem; }
   .prose h2 { font-size: 1.32rem; }
