@@ -22,7 +22,7 @@ export const SITE = {
 // Bio shown on the home page. Intentionally NOT language-switched — it stays
 // in English on both the en and zh homepages. Supports **bold** and
 // [text](url) markdown.
-export const BIO = `I'm **Aoyang Qin** (秦傲洋), a fourth-year Ph.D. student at Tsinghua University, advised by Dr. [Sirui Xie](https://siruixie.com/) and Prof. [Song-Chun Zhu](http://www.stat.ucla.edu/~sczhu/). I'm widely interested in fundamental problems in AI and Machine Learning, including Generative Modeling, Representation Learning and Decision-Making. I'm also excited to build various products and co-founded [PicWiz](https://picwiz.com/). I'm currently focusing on building large-scale video generative model and honored to have an internship for training [vidu](https://www.vidu.cn/) at [Shengshu](https://www.genspi.com/en/).`;
+export const BIO = `I'm **Aoyang Qin** (秦傲洋), a fourth-year Ph.D. student at Tsinghua University, advised by Dr. [Sirui Xie](https://siruixie.com/) and Prof. [Song-Chun Zhu](http://www.stat.ucla.edu/~sczhu/). I'm widely interested in fundamental problems in AI and Machine Learning, including Generative Modeling, Representation Learning and Decision-Making. I'm also excited to build various products and co-founded [PicWiz](https://picwiz.com/). I'm currently focusing on building large-scale video generative model and honored to have an internship for training [Vidu](https://www.vidu.cn/) at [Shengshu](https://www.genspi.com/en/). I learn and write here.`;
 
 // Top navigation. `key` resolves through the `ui` table below.
 export const NAV: { href: string; key: keyof (typeof ui)['en'] }[] = [
