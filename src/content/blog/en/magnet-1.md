@@ -8,7 +8,7 @@ category: "Magnetism Series"
 summary: "A magnet pulls a nail across the table — surely the simplest demonstration in physics. Yet the magnetic force does no work, and classical physics turns out to forbid magnetism outright. Part 1 of a series: setting up the paradox."
 ---
 
-> This is Part 1 of a three-part series on a deceptively simple question. **Part 1 (this one):** the paradox, and why classical physics forbids magnets. **Part 2:** the relativistic origin of spin, from Dirac's equation. **Part 3:** many-body physics, the Ising model, and the symmetry breaking that ties a fridge magnet to the Higgs mechanism.
+> This is Part 1 of a four-part series on a deceptively simple question. **Part 1 (this one):** the paradox, why classical physics forbids magnets, and a first relativistic attempt that fails. **Part 2:** Dirac's equation and the magic factor $g = 2$. **Part 3:** the group theory of spin — SU(2), SO(3), and the Lorentz group. **Part 4:** many-body physics, the Ising model, and the symmetry breaking that ties a fridge magnet to the Higgs mechanism.
 
 Let me start with something you have done a hundred times without a second thought: you bring a magnet near a nail, and the nail jumps to it. It is probably the first physics experiment any of us ever ran, back when we were children. And yet, if you take the textbook laws of electromagnetism completely seriously, this little jump should be *impossible*. Not "hard to explain" — impossible.
 
@@ -42,10 +42,32 @@ But the kinetic energy $\frac{(p-qA)^2}{2m}$ blows up as $p \to \pm\infty$, so t
 $$\left[ -k_B T e^{-H/k_B T} \right]_{-\infty}^{+\infty} = 0 - 0 = 0$$
 And there it is. $\langle M \rangle = 0$. In other words: classical physics is merciless here. The vector potential $\vec{A}$ does shift the momentum around, but because we integrate the momentum over its entire range from $-\infty$ to $+\infty$, that shift contributes *exactly nothing* to the average. The magnetic field leaves no thermodynamic trace whatsoever. **Classical physics predicts, flatly, that magnets cannot exist.**
 
+## 3. The first rescue attempt — and why it fails
+
+Faced with a paradox this severe, the instinct of any physicist is the same: classical physics is missing something, and the two great corrections of the twentieth century are quantum mechanics and relativity. So let us try the obvious thing and bolt them together.
+
+The Schrödinger equation is built on the *non-relativistic* energy–momentum relation $E = \vec{p}^2 / 2m$. The honest fix is to start from the relativistic relation $E^2 = c^2\vec{p}^2 + m^2c^4$ instead, and promote energy and momentum to the usual quantum operators, $E \to i\hbar \partial_t$ and $\vec{p} \to -i\hbar \nabla$. Do that, and out drops the **Klein–Gordon equation**:
+$$\frac{1}{c^2} \frac{\partial^2 \psi}{\partial t^2} - \nabla^2 \psi + \left( \frac{mc}{\hbar} \right)^2 \psi = 0$$
+It is prettier than it looks. Introducing the **d'Alembertian** $\Box = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2$, the spacetime cousin of the Laplacian, the whole thing collapses to
+$$\left(\Box + \left(\frac{mc}{\hbar}\right)^2\right) \psi = 0$$
+This is the most natural relativistic wave equation you could write down. And when it was first proposed, it was very nearly thrown away. The reason it was abandoned is more instructive than any success would have been, so let us see exactly what goes wrong — because both failures are clues.
+
+The **first** problem is energy. The relativistic relation is quadratic in $E$, so it admits two roots:
+$$E = \pm \sqrt{(pc)^2 + (mc^2)^2}$$
+That innocent $\pm$ is a disaster. The **negative-energy states** have no floor: a particle could cascade down through ever lower negative energies, radiating endlessly, and no stable ground state for matter would exist at all. The universe would be unstable.
+
+The **second** problem is probability. In quantum mechanics the wavefunction must furnish a conserved probability current $j^\mu = (\rho, \mathbf{j})$, and for the Schrödinger equation the density $\rho = |\psi|^2$ is reassuringly non-negative. For Klein–Gordon, the conserved density that the math forces on us is instead
+$$\rho = \frac{i\hbar}{2mc^2} \left( \psi^* \frac{\partial \psi}{\partial t} - \psi \frac{\partial \psi^*}{\partial t} \right)$$
+And here is the trouble: because the equation is *second* order in time, $\psi$ and $\frac{\partial \psi}{\partial t}$ can be chosen independently at the initial instant. Nothing stops us from arranging $\rho < 0$. A **negative probability** is meaningless — a particle cannot have a $-30\%$ chance of being somewhere.
+
+Notice that *both* diseases trace back to the same anatomical feature: the equation is second order in time. That is the diagnosis Dirac fixed on. His demand was audacious in its simplicity — find an equation that is **first order in time**, like Schrödinger's, yet fully **relativistically covariant**. The most naive way to attempt it is to write a Hamiltonian that is merely *linear* in momentum, with some unknown coefficients to be pinned down later:
+$$\hat{H} = c(\alpha_x \hat{p}_x + \alpha_y \hat{p}_y + \alpha_z \hat{p}_z) + \beta m c^2$$
+What are these mysterious objects $\alpha_x, \alpha_y, \alpha_z, \beta$? They cannot be ordinary numbers — and forcing this equation to be consistent with relativity will compel them to be *matrices*, dragging a whole new internal structure into the electron out of nothing but the demand for consistency. That structure will turn out to be spin, and spin will turn out to be the missing source of magnetism. But unpacking that is a story in its own right.
+
 ## Where this leaves us
 
-So we have walked ourselves into a wall, on purpose. The magnetic force cannot do the work we see it do, and a careful classical accounting says the net magnetization must vanish identically. The fridge magnet holding up your shopping list is, by the lights of nineteenth-century physics, an outright contradiction.
+Let us take stock. We set out to explain the most ordinary thing in the world — a magnet lifting a nail — and instead we have demolished two theories. Classical statistical mechanics forbids magnetism outright (Bohr–van Leeuwen). The first relativistic patch, Klein–Gordon, hands us negative energies and negative probabilities. The fridge magnet remains, stubbornly, a paradox.
 
-When a theory this carefully built runs headfirst into a fact this stubborn, it is not the fact that gives way — it is the theory. The missing ingredient is not a better classical force; it is everything classical physics left out. To rescue the humble magnet we will have to follow Dirac, fuse special relativity with quantum mechanics, and discover that the electron carries a magnetism that has no classical cause at all.
+But we are not lost; we are exactly where Dirac stood in 1928, holding a single sharp clue. Both failures came from a time derivative that was one order too high. Demand an equation that is first order in time *and* respects relativity, and you are forced — not invited, *forced* — to introduce matrix coefficients, and with them an entirely new internal degree of freedom for the electron. That degree of freedom is spin, and spin carries a magnetic moment that no classical argument can produce.
 
 That is where Part 2 begins. *To be continued.*
