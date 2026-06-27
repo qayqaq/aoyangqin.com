@@ -11,7 +11,6 @@ const url = postUrl(post);
 <article class="post-card">
   <div class="post-card-meta">
     <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date, lang)}</time>
-    {post.data.category && <span class="post-card-cat">{post.data.category}</span>}
   </div>
   <h2 class="post-card-title"><a href={url}>{post.data.title}</a></h2>
   {post.data.summary && <p class="post-card-summary">{post.data.summary}</p>}

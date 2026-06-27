@@ -23,7 +23,6 @@ const t = useTranslations(lang);
       <h1>{data.title}</h1>
       <div class="post-meta">
         <time datetime={data.date.toISOString()}>{formatDate(data.date, lang)}</time>
-        {data.category && (<><span class="dot">·</span><span>{data.category}</span></>)}
         {translation && (
           <><span class="dot">·</span>
           <a href={postPath(translation)}>{lang === 'en' ? '中文版' : 'English'}</a></>
