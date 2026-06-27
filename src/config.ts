@@ -19,10 +19,10 @@ export const SITE = {
 };
 
 // Short bio shown on the home page, per language. Markdown-ish plain text.
-export const BIO = {
-  en: `I'm **Aoyang Qin**, a PhD student working on AI and machine learning — generative modeling, decision making, and representation learning. I write notes and essays here on the things I'm learning, across ML and physics.`,
-  zh: `我是**秦傲洋**，一名研究 AI 与机器学习的博士生，方向包括生成式建模、决策与表示学习。我在这里记录学习笔记与随笔，内容涵盖机器学习与物理。`,
-};
+// Bio shown on the home page. Intentionally NOT language-switched — it stays
+// in English on both the en and zh homepages. Supports **bold** and
+// [text](url) markdown.
+export const BIO = `I'm **Aoyang Qin** (秦傲洋), a fourth-year Ph.D. student at Tsinghua University, advised by Dr. [Sirui Xie](https://siruixie.com/) and Prof. [Song-Chun Zhu](http://www.stat.ucla.edu/~sczhu/). I'm widely interested in fundamental problems in AI and Machine Learning, including Generative Modeling, Representation Learning and Decision-Making. I co-founded [PicWiz](https://picwiz.com/). I'm currently focusing on building large-scale video generative model and honored to have an internship for training [vidu](https://www.vidu.cn/) at [Shengshu](https://www.genspi.com/en/).`;
 
 // Top navigation. `key` resolves through the `ui` table below.
 export const NAV: { href: string; key: keyof (typeof ui)['en'] }[] = [
