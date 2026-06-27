@@ -90,6 +90,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
           },
         },
       };
+      // Fallback: if MathJax fails to load (network), reveal raw math anyway
+      // after 4s so it never stays invisible.
+      setTimeout(function () {
+        document.documentElement.classList.add('mathjax-ready');
+      }, 4000);
     </script>
     <script
       is:inline

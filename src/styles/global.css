@@ -72,11 +72,11 @@ img { max-width: 100%; height: auto; }
 hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
 ::selection { background: var(--accent-soft); }
 
-/* Avoid MathJax delimiter flash: hide raw display TeX until typeset. */
-.math-display { visibility: hidden; }
-.mathjax-ready .math-display,
-mjx-container { visibility: visible; }
-.math-display:has(mjx-container) { visibility: visible; }
+/* Avoid MathJax delimiter flash: hide raw TeX (inline + display) until typeset.
+   Revealed when <html> gets .mathjax-ready (startup hook, or fallback timeout). */
+.math-inline, .math-display { visibility: hidden; }
+.mathjax-ready .math-inline,
+.mathjax-ready .math-display { visibility: visible; }
 
 /* ============================================================
    Prose (article body) — serif, generous measure
