@@ -11,13 +11,9 @@ const url = postUrl(post);
 <article class="post-card">
   <div class="post-card-meta">
     <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date, lang)}</time>
-    {post.data.tags?.length > 0 && (
-      <span class="post-card-tags">
-        {post.data.tags.map((tag) => (
-          <a class="tag" href={localizedPath(`/tags/${tag}`, lang)}>#{tag}</a>
-        ))}
-      </span>
-    )}
+    {post.data.tags?.map((tag) => (
+      <a class="post-card-tag" href={localizedPath(`/tags/${tag}`, lang)}>{tag}</a>
+    ))}
   </div>
   <h2 class="post-card-title"><a href={url}>{post.data.title}</a></h2>
   {post.data.summary && <p class="post-card-summary">{post.data.summary}</p>}
