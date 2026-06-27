@@ -1,0 +1,67 @@
+---
+import 'katex/dist/katex.min.css';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../config';
+import { getLangFromUrl, useTranslations } from '../lib/i18n';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Open Graph type (`website` | `article`). */
+  type?: string;
+}
+
+const { title, description, type: ogType = 'website' } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const pageTitle = title ? `${title} · ${SITE.title}` : SITE.title;
+const pageDesc = description ?? SITE.description;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!doctype html>
+<html lang={lang === 'zh' ? 'zh-CN' : 'en'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title ?? SITE.title} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={SITE.title}
+      href={`${Astro.site}rss.xml`}
+    />
+
+    <!-- No-flash theme: run before paint -->
+    <script is:inline>
+      (function () {
+        const k = 'theme';
+        const saved = localStorage.getItem(k);
+        const sys = matchMedia('(prefers-color-scheme: dark)').matches;
+        const dark = saved ? saved === 'dark' : sys;
+        document.documentElement.classList.toggle('dark', dark);
+      })();
+    </script>
+  </head>
+  <body>
+    <Header />
+    <main class="content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

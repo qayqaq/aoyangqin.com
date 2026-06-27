@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../PostCard.astro';
+import { useTranslations } from '../../lib/i18n';
+import { getPosts, groupByCategory } from '../../lib/posts';
+import type { Lang } from '../../config';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const posts = await getPosts(lang);
+const byCategory = groupByCategory(posts);
+---
+<BaseLayout title={t('blog.title')}>
+  <h1 class="page-title">{t('blog.title')}</h1>
+  {
+    [...byCategory.entries()].map(([category, items]) => (
+      <section class="cat-group">
+        <h2 class="cat-title">{category}</h2>
+        <div class="post-list">
+          {items.map((post) => <PostCard post={post} />)}
+        </div>
+      </section>
+    ))
+  }
+</BaseLayout>

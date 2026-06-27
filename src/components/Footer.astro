@@ -1,0 +1,16 @@
+---
+import { SITE } from '../config';
+import { getLangFromUrl, localizedPath } from '../lib/i18n';
+const lang = getLangFromUrl(Astro.url);
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      {SITE.social.github && <a href={SITE.social.github} rel="me">GitHub</a>}
+      {SITE.social.email && <a href={`mailto:${SITE.social.email}`}>Email</a>}
+      <a href={localizedPath('/rss.xml', lang)}>RSS</a>
+    </div>
+    <div class="footer-copy">© {year} {SITE.author}</div>
+  </div>
+</footer>

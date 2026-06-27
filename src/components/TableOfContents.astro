@@ -1,0 +1,45 @@
+---
+import type { MarkdownHeading } from 'astro';
+import { getLangFromUrl, useTranslations } from '../lib/i18n';
+
+interface Props { headings: MarkdownHeading[]; }
+const { headings } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Only show h2/h3 in the TOC to keep it readable.
+const toc = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
+---
+{toc.length > 0 && (
+  <nav class="toc" aria-label={t('toc.label')}>
+    <p class="toc-title">{t('toc.title')}</p>
+    <ul>
+      {toc.map((h) => (
+        <li class={`toc-h${h.depth}`}>
+          <a href={`#${h.slug}`}>{h.text}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
+
+<script>
+  // Highlight the current section as you scroll.
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('.toc a'));
+  if (links.length) {
+    const map = new Map<string, HTMLAnchorElement>();
+    links.forEach((l) => map.set(decodeURIComponent(l.hash.slice(1)), l));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            links.forEach((l) => l.classList.remove('active'));
+            map.get(entry.target.id)?.classList.add('active');
+          }
+        });
+      },
+      { rootMargin: '0px 0px -75% 0px', threshold: 0 }
+    );
+    document.querySelectorAll('.prose h2, .prose h3').forEach((h) => observer.observe(h));
+  }
+</script>

@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../PostCard.astro';
+import { useTranslations } from '../../lib/i18n';
+import type { Post } from '../../lib/posts';
+import type { Lang } from '../../config';
+
+interface Props { lang: Lang; tag: string; posts: Post[]; }
+const { lang, tag, posts } = Astro.props;
+const t = useTranslations(lang);
+---
+<BaseLayout title={`#${tag}`}>
+  <h1 class="page-title">{t('tags.tagged')}: <span class="accent">#{tag}</span></h1>
+  <div class="post-list">
+    {posts.map((post) => <PostCard post={post} />)}
+  </div>
+</BaseLayout>

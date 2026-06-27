@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations, localizedPath } from '../../lib/i18n';
+import { getPosts, collectTags } from '../../lib/posts';
+import type { Lang } from '../../config';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const posts = await getPosts(lang);
+const tags = collectTags(posts);
+---
+<BaseLayout title={t('tags.title')}>
+  <h1 class="page-title">{t('tags.title')}</h1>
+  <div class="tag-cloud">
+    {
+      [...tags.entries()].map(([tag, count]) => (
+        <a class="tag" href={localizedPath(`/tags/${tag}`, lang)}>
+          #{tag}<span class="tag-count">{count}</span>
+        </a>
+      ))
+    }
+  </div>
+</BaseLayout>

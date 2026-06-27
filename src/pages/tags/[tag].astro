@@ -1,0 +1,16 @@
+---
+import TagView from '../../components/views/TagView.astro';
+import { getPosts, collectTags } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getPosts('en');
+  const tags = collectTags(posts);
+  return [...tags.keys()].map((tag) => ({
+    params: { tag },
+    props: { tag, posts: posts.filter((p) => p.data.tags?.includes(tag)) },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+<TagView lang="en" tag={tag} posts={posts} />

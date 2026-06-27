@@ -1,0 +1,54 @@
+---
+import type { MarkdownHeading } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import Comments from '../components/Comments.astro';
+import { getLangFromUrl, useTranslations } from '../lib/i18n';
+import { formatDate, postPath } from '../lib/posts';
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+  headings: MarkdownHeading[];
+  translation?: CollectionEntry<'blog'> | null;
+}
+const { entry, headings, translation } = Astro.props;
+const { data } = entry;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<BaseLayout title={data.title} description={data.summary} type="article">
+  <article class="post" data-pagefind-body>
+    <header class="post-header">
+      <h1>{data.title}</h1>
+      <div class="post-meta">
+        <time datetime={data.date.toISOString()}>{formatDate(data.date, lang)}</time>
+        {data.category && (<><span class="dot">·</span><span>{data.category}</span></>)}
+        {translation && (
+          <><span class="dot">·</span>
+          <a href={postPath(translation)}>{lang === 'en' ? '中文版' : 'English'}</a></>
+        )}
+      </div>
+      {data.tags.length > 0 && (
+        <ul class="post-tags">
+          {data.tags.map((tag) => (
+            <li><a href={`${lang === 'en' ? '' : '/zh'}/tags/${tag}`}>#{tag}</a></li>
+          ))}
+        </ul>
+      )}
+    </header>
+
+    <div class="post-body">
+      <TableOfContents headings={headings} />
+      <div class="prose">
+        <slot />
+      </div>
+    </div>
+
+    <footer class="post-footer">
+      <a class="back-link" href={lang === 'en' ? '/blog' : '/zh/blog'}>← {t('nav.blog')}</a>
+    </footer>
+
+    <Comments />
+  </article>
+</BaseLayout>
