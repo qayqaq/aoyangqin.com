@@ -1,5 +1,4 @@
 ---
-import 'katex/dist/katex.min.css';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -46,16 +45,57 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
       href={`${Astro.site}rss.xml`}
     />
 
+    <!-- Fonts: Newsreader (Latin serif) + Noto Serif SC (CJK serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Noto+Serif+SC:wght@400;500;600;700&display=swap"
+    />
+
     <!-- No-flash theme: run before paint -->
     <script is:inline>
       (function () {
-        const k = 'theme';
-        const saved = localStorage.getItem(k);
+        const saved = localStorage.getItem('theme');
         const sys = matchMedia('(prefers-color-scheme: dark)').matches;
         const dark = saved ? saved === 'dark' : sys;
         document.documentElement.classList.toggle('dark', dark);
       })();
     </script>
+
+    <!-- Client-side MathJax: auto equation numbering + \eqref/\ref jump-links -->
+    <script is:inline>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']],
+          displayMath: [
+            ['$$', '$$'],
+            ['\\[', '\\]'],
+          ],
+          tags: 'ams',
+          tagSide: 'right',
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+          ignoreHtmlClass: 'no-mathjax',
+        },
+        svg: { fontCache: 'global' },
+        startup: {
+          ready() {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(function () {
+              document.documentElement.classList.add('mathjax-ready');
+            });
+          },
+        },
+      };
+    </script>
+    <script
+      is:inline
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
   </head>
   <body>
     <Header />
