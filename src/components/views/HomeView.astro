@@ -9,7 +9,9 @@ import type { Lang } from '../../config';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-const posts = (await getPosts(lang)).slice(0, 6);
+const posts = await getPosts(lang); // newest-first
+const INITIAL = 6;
+const hasMore = posts.length > INITIAL;
 
 // Bio is fixed English on both locales. Render **bold** and [text](url)
 // without pulling in a full markdown dependency.
@@ -30,8 +32,42 @@ const bioHtml = BIO
       <h2>{t('home.recent')}</h2>
       <a class="section-more" href={localizedPath('/blog', lang)}>{t('home.all')}</a>
     </div>
-    <div class="post-list">
-      {posts.map((post) => <PostCard post={post} />)}
+    <div class="post-list" id="home-post-list">
+      {posts.map((post, i) => (
+        <div class="post-row" data-extra={i >= INITIAL ? 'true' : undefined} hidden={i >= INITIAL}>
+          <PostCard post={post} />
+        </div>
+      ))}
     </div>
+    {hasMore && (
+      <div class="show-more-wrap">
+        <button
+          id="show-more-btn"
+          class="show-more-btn"
+          data-more={t('home.more')}
+          data-less={t('home.less')}
+          aria-expanded="false"
+        >
+          {t('home.more')}
+        </button>
+      </div>
+    )}
   </section>
+
+  {hasMore && (
+    <script is:inline>
+      (function () {
+        var btn = document.getElementById('show-more-btn');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          document.querySelectorAll('#home-post-list .post-row[data-extra]').forEach(function (el) {
+            el.hidden = expanded;
+          });
+          btn.setAttribute('aria-expanded', String(!expanded));
+          btn.textContent = expanded ? btn.dataset.more : btn.dataset.less;
+        });
+      })();
+    </script>
+  )}
 </BaseLayout>

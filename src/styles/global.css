@@ -269,6 +269,28 @@ mjx-container { color: #1c1813; }
 .post-list { display: flex; flex-direction: column; }
 .post-card { padding: 1.5rem 0 1.2rem; border-bottom: 1px solid var(--border); }
 .post-card:last-child { border-bottom: none; }
+/* On the home page, cards are wrapped in .post-row; use border-TOP (skipping
+   the first row) so there's never a dangling divider under the last visible
+   card, no matter how many rows are currently shown. */
+.post-row > .post-card { border-bottom: none; }
+.post-row { border-top: 1px solid var(--border); }
+.post-row:first-child { border-top: none; }
+.post-row[hidden] { display: none; }
+
+/* Show more / less button */
+.show-more-wrap { display: flex; justify-content: center; margin-top: 1.6rem; }
+.show-more-btn {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--fg-soft);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45em 1.4em;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.show-more-btn:hover { color: var(--accent); border-color: var(--accent); background: var(--bg-soft); }
 .post-card-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.55rem; font-size: 0.8rem; color: var(--fg-faint); margin-bottom: 0.55rem; font-variant: small-caps; letter-spacing: 0.04em; }
 .post-card-meta time { flex-shrink: 0; }
 .post-card-tag { color: var(--fg-faint); text-decoration: none; }
