@@ -325,12 +325,12 @@ mjx-container { color: #1c1813; }
 .tag-cloud .tag { font-size: 0.95rem; padding: 0.25em 0.8em; }
 .tag-count { margin-left: 0.4em; font-size: 0.8em; color: var(--fg-faint); }
 
-.archive-year { margin-bottom: 2rem; }
-.archive-year h2 { font-family: var(--font-serif); font-size: 1.4rem; margin: 0 0 0.6rem; color: var(--fg-soft); }
+.archive-year { margin-bottom: 1.8rem; }
+.archive-year h2 { font-family: var(--font-serif); font-size: 1.2rem; margin: 0 0 0.4rem; color: var(--fg-soft); }
 .archive-list { list-style: none; margin: 0; padding: 0; }
-.archive-list li { display: flex; gap: 1rem; padding: 0.4rem 0; align-items: baseline; }
-.archive-list a { font-family: var(--font-serif); font-size: 1.08rem; }
-.archive-list time { flex-shrink: 0; width: 8em; color: var(--fg-faint); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+.archive-list li { display: flex; gap: 0.9rem; padding: 0.3rem 0; align-items: baseline; }
+.archive-list a { font-family: var(--font-serif); font-size: 0.95rem; }
+.archive-list time { flex-shrink: 0; width: 9.5em; white-space: nowrap; color: var(--fg-faint); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
 
 /* ============================================================
    Post page
