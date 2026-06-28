@@ -1,6 +1,6 @@
 ---
 title: "量子混沌：蝴蝶去哪儿了？"
-date: "2025-10-06"
+date: "2025-09-14"
 lang: "zh"
 translationKey: "quantum-chaos"
 tags: ["量子力学", "混沌", "物理", "混沌理论", "复杂系统"]

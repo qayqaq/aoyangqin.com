@@ -1,6 +1,6 @@
 ---
 title: "Quantum Chaos: Where Did the Butterfly Go?"
-date: "2025-10-06"
+date: "2025-09-14"
 lang: "en"
 translationKey: "quantum-chaos"
 tags: ["quantum-mechanics", "chaos", "physics", "chaos-theory", "complex-systems"]

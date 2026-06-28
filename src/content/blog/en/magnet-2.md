@@ -1,6 +1,6 @@
 ---
 title: "What Happens When a Magnet Attracts Metal? (Part 2): Dirac, and the Magnetism Hidden in Spacetime"
-date: "2026-01-18"
+date: "2026-03-22"
 lang: "en"
 translationKey: "magnet-2"
 tags: ["physics", "electromagnetism"]

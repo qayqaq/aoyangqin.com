@@ -1,6 +1,6 @@
 ---
 title: "A Journey Through Classical Mechanics (Part 3): The Symplectic World"
-date: "2026-01-03"
+date: "2026-01-18"
 lang: "en"
 translationKey: "classical-mechanics-3"
 tags: ["physics", "classical-mechanics"]

@@ -1,6 +1,6 @@
 ---
 title: "一次统计力学之旅（一）：把状态数到温度里去"
-date: "2025-12-01"
+date: "2025-10-19"
 lang: "zh"
 translationKey: "statistical-mechanics-1"
 tags: ["物理", "统计力学"]

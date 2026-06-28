@@ -1,6 +1,6 @@
 ---
 title: "磁铁吸引金属时发生了什么？（二）：狄拉克，与藏在时空里的磁性"
-date: "2026-01-18"
+date: "2026-03-22"
 lang: "zh"
 translationKey: "magnet-2"
 tags: ["物理", "电磁学"]

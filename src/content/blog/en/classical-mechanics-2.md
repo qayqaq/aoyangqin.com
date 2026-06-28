@@ -1,6 +1,6 @@
 ---
 title: "A Journey Through Classical Mechanics (Part 2): How Symmetry Writes the Law"
-date: "2026-01-02"
+date: "2026-01-11"
 lang: "en"
 translationKey: "classical-mechanics-2"
 tags: ["physics", "classical-mechanics"]

@@ -1,6 +1,6 @@
 ---
 title: "磁铁吸引金属时发生了什么？（一）：经典物理的死胡同"
-date: "2026-02-03"
+date: "2026-03-15"
 lang: "zh"
 translationKey: "magnet-1"
 tags: ["物理", "电磁学"]

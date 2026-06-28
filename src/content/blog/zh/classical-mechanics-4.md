@@ -1,6 +1,6 @@
 ---
 title: "一次经典力学之旅（四）：秩序、混沌与热的几何"
-date: "2026-01-04"
+date: "2026-01-25"
 lang: "zh"
 translationKey: "classical-mechanics-4"
 tags: ["物理", "经典力学"]

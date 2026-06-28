@@ -1,6 +1,6 @@
 ---
 title: "一次经典力学之旅（二）：对称性如何写下定律"
-date: "2026-01-02"
+date: "2026-01-11"
 lang: "zh"
 translationKey: "classical-mechanics-2"
 tags: ["物理", "经典力学"]

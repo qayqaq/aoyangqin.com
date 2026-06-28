@@ -1,6 +1,6 @@
 ---
 title: "A Journey Through Statistical Mechanics (Part 1): Counting Our Way to Temperature"
-date: "2025-12-01"
+date: "2025-10-19"
 lang: "en"
 translationKey: "statistical-mechanics-1"
 tags: ["physics", "statistical-mechanics"]

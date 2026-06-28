@@ -1,6 +1,6 @@
 ---
 title: "What Happens When a Magnet Attracts Metal? (Part 1): The Classical Dead End"
-date: "2026-01-17"
+date: "2026-03-15"
 lang: "en"
 translationKey: "magnet-1"
 tags: ["physics", "electromagnetism"]

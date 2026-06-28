@@ -1,6 +1,6 @@
 ---
 title: "一次统计力学之旅（二）：从无知中涌现的秩序"
-date: "2025-12-02"
+date: "2025-10-26"
 lang: "zh"
 translationKey: "statistical-mechanics-2"
 tags: ["物理", "统计力学"]

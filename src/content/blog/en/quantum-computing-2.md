@@ -1,6 +1,6 @@
 ---
 title: "A Path into Quantum Computing (Part 2): Measurement, Protocols, and the Circuit Model"
-date: "2026-01-03"
+date: "2025-11-30"
 lang: "en"
 translationKey: "quantum-computing-2"
 tags: ["quantum-computing"]

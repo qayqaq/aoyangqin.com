@@ -1,6 +1,6 @@
 ---
 title: "A Journey Through Statistical Mechanics (Part 2): Order Emerging from Ignorance"
-date: "2025-12-02"
+date: "2025-10-26"
 lang: "en"
 translationKey: "statistical-mechanics-2"
 tags: ["physics", "statistical-mechanics"]

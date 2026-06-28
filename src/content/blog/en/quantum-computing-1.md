@@ -1,6 +1,6 @@
 ---
 title: "A Path into Quantum Computing (Part 1): From Reversible Gates to Entanglement"
-date: "2026-01-02"
+date: "2025-11-23"
 lang: "en"
 translationKey: "quantum-computing-1"
 tags: ["quantum-computing"]

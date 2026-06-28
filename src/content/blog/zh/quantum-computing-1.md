@@ -1,6 +1,6 @@
 ---
 title: "量子计算（一）：从可逆门到纠缠"
-date: "2026-01-02"
+date: "2025-11-23"
 lang: "zh"
 translationKey: "quantum-computing-1"
 tags: ["量子计算"]

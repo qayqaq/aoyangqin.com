@@ -1,6 +1,6 @@
 ---
 title: "一次经典力学之旅（三）：辛的世界"
-date: "2026-01-03"
+date: "2026-01-18"
 lang: "zh"
 translationKey: "classical-mechanics-3"
 tags: ["物理", "经典力学"]

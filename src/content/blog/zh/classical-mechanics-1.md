@@ -1,6 +1,6 @@
 ---
 title: "一次经典力学之旅（一）：势、形式，与作用量的诞生"
-date: "2026-01-01"
+date: "2026-01-04"
 lang: "zh"
 translationKey: "classical-mechanics-1"
 tags: ["物理", "经典力学"]

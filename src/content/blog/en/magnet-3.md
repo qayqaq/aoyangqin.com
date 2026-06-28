@@ -1,6 +1,6 @@
 ---
 title: "What Happens When a Magnet Attracts Metal? (Part 3): Why the Electron Is a Spinor"
-date: "2026-01-19"
+date: "2026-03-29"
 lang: "en"
 translationKey: "magnet-3"
 tags: ["physics", "electromagnetism"]

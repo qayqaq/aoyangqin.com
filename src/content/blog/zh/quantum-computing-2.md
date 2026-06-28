@@ -1,6 +1,6 @@
 ---
 title: "量子计算（二）：测量、协议，与线路模型"
-date: "2026-01-03"
+date: "2025-11-30"
 lang: "zh"
 translationKey: "quantum-computing-2"
 tags: ["量子计算"]

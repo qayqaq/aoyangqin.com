@@ -1,6 +1,6 @@
 ---
 title: "What Happens When a Magnet Attracts Metal? (Part 4): How 10²³ Spins Agree, and a Bridge to the Higgs"
-date: "2026-01-20"
+date: "2026-04-05"
 lang: "en"
 translationKey: "magnet-4"
 tags: ["physics", "electromagnetism"]

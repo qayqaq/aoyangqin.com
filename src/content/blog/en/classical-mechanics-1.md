@@ -1,6 +1,6 @@
 ---
 title: "A Journey Through Classical Mechanics (Part 1): Potentials, Forms, and the Birth of the Action"
-date: "2026-01-01"
+date: "2026-01-04"
 lang: "en"
 translationKey: "classical-mechanics-1"
 tags: ["physics", "classical-mechanics"]

@@ -1,6 +1,6 @@
 ---
 title: "A Journey Through Classical Mechanics (Part 4): Order, Chaos, and the Geometry of Heat"
-date: "2026-01-04"
+date: "2026-01-25"
 lang: "en"
 translationKey: "classical-mechanics-4"
 tags: ["physics", "classical-mechanics"]

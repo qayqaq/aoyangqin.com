@@ -1,6 +1,6 @@
 ---
 title: "磁铁吸引金属时发生了什么？（三）：电子为什么是个旋量"
-date: "2026-01-19"
+date: "2026-03-29"
 lang: "zh"
 translationKey: "magnet-3"
 tags: ["物理", "电磁学"]
